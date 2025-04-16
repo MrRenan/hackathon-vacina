@@ -1,13 +1,13 @@
-package br.com.fiap.hackathon_vacina;
+package br.com.fiap;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HackathonVacinaApplication {
+public class VacinaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HackathonVacinaApplication.class, args);
+		SpringApplication.run(VacinaApplication.class, args);
 	}
 
 }

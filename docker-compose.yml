@@ -1,0 +1,28 @@
+services:
+  mongo-vacina:
+    image: mongo:6.0
+    container_name: mongo-vacina
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD}
+      MONGO_INITDB_DATABASE: hackathon-vacina
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongo-vacina-data:/data/db
+
+  vacina-service:
+    build: .
+    container_name: vacina-service
+    ports:
+      - "8081:8080"
+    depends_on:
+      - mongo-vacina
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATA_MONGODB_USERNAME: ${MONGO_ROOT_USERNAME}
+      SPRING_DATA_MONGODB_PASSWORD: ${MONGO_ROOT_PASSWORD}
+
+volumes:
+  mongo-vacina-data: {}

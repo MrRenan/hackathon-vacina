@@ -1,10 +1,10 @@
-package br.com.fiap.hackathon_vacina;
+package br.com.fiap.vacina;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class HackathonVacinaApplicationTests {
+class VacinaApplicationTests {
 
 	@Test
 	void contextLoads() {
